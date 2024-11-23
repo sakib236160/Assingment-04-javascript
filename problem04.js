@@ -22,12 +22,12 @@ function calculateFinalScore(obj) {
         return "Invalid Input";
     }
 
-    let total_marks = obj.testScore + obj.schoolGrade;
-    
+    let FinalScore = obj.testScore + obj.schoolGrade;
+
     if (obj.isFFamily) {
-        total_marks = total_marks + (total_marks * 0.2);
+        FinalScore = FinalScore + (FinalScore * 0.2);
     }
-    if (total_marks >= 80) {
+    if (FinalScore >= 80) {
         return true;
     } else {
         return false;
