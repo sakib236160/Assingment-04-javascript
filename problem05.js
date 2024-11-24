@@ -18,23 +18,24 @@
 // console.log(waitingTime([7, 8, 3, 4, 5], " 9")); 
 
 
-function waitingTime(array, serialNumber) {
-    if (!Array.isArray(array)){
+function waitingTime(waitingTimes , serialNumber) {
+    if (!Array.isArray(waitingTimes )){
         return "Invalid Input";
     }else if((typeof serialNumber !== "number")){
         return "Invalid Input";
     }
 
     let totalTime = 0;
-    for (let time of array) {
+    for (let time of waitingTimes ) {
         totalTime = totalTime + time;
     }
 
-    let averageTime = Math.round(totalTime / array.length);
-    let remainingPeople = serialNumber - array.length - 1;
+    let averageTime = Math.round(totalTime / waitingTimes.length);
+    let remainingMen = serialNumber - waitingTimes.length - 1;
     
-    if (remainingPeople > 0) {
-        return remainingPeople * averageTime;
+    if (remainingMen > 0) {
+        const averageTimeMultiRemainingMen = remainingMen * averageTime;
+        return averageTimeMultiRemainingMen;
     } else {
         return 0;
     }
